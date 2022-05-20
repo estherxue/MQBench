@@ -29,9 +29,9 @@ from mqbench.utils.utils import _fix_succ_recursivly
 from mqbench.utils.state import enable_quantization, disable_all
 import mqbench.nn.intrinsic.qat as qnniqat
 
-_ADAROUND_SUPPORT_TYPE = (torch.nn.Conv2d, torch.nn.Linear)
+_ADAROUND_SUPPORT_TYPE = (torch.nn.Conv2d, torch.nn.Linear, torch.nn.ConvTranspose2d)
 _FUSED_TYPE = (nniqat.ConvBnReLU2d, nniqat.ConvBn2d, qnniqat.ConvFreezebn2d, qnniqat.ConvFreezebnReLU2d)
-_WEIGHTS_MODULE_TYPE = (torch.nn.Conv2d, torch.nn.Linear)
+_WEIGHTS_MODULE_TYPE = (torch.nn.Conv2d, torch.nn.Linear, torch.nn.ConvTranspose2d)
 
 def node2modules(name2modules, nodes):
     modules = dict()
